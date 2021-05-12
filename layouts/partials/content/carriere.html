@@ -1,0 +1,25 @@
+{{ with .Site.GetPage "section" "carriere" }}
+    <section class="block">
+        <header class="block">
+            <h1 class="subtitle is-3 has-text-primary"><i class="fas fa-globe"></i> Expérience professionnelle</h1>
+        </header>
+        <div class="jobs-education">
+            {{ range .Pages }}
+                <article class="block pb-4">
+                    <header class="mb-0">
+                        <h2 class="subtitle is-size-4 has-text-primary has-text-weight-bold  mb-0">{{ .Title }}</h2>
+                    </header>
+                    <div class="details mt-2">
+                        <ul>
+                            <li><i class="fas fa-building has-text-info mr-1"></i> {{ .Params.company }}</li>
+                            <li><i class="fas fa-calendar-alt has-text-info mr-1"></i> {{ .Params.date_from }} - {{ .Params.date_to }}</li>
+                            <li><i class="fas fa-map-marker-alt has-text-info mr-1"></i> {{ .Params.location }}</li>
+                        </ul>
+                        <div>{{ .Content }}</div>
+                    </div>
+                </article>
+            {{ end }}
+        </div>
+    </section>
+    
+{{ end }}

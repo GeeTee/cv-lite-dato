@@ -1,0 +1,9 @@
+<header id="html-header" class="block" role="banner">
+  <h1 class="title has-text-centered has-text-primary mb-1 ">{{ .Site.Home.Title }}</h1>
+  {{ if .Site.Home.Params.description }}
+  <p class="has-text-centered is-italic">{{ .Site.Home.Params.description | safeHTML }}</p>
+  {{ end }}
+  {{ if .Site.Home.Params.image }}
+  {{ partial "images/portrait.html" . }}
+  {{ end }}
+</header>

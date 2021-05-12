@@ -1,0 +1,13 @@
+{{ if .Params.banner }}
+{{ $image := .Params.banner }}
+{{ $src := resources.Get $image }}
+{{ $imageStyled := $src.Fill "472x258 q75 Box smart" }}
+<div class="post-list-img">
+        <img 
+        loading="lazy" 
+        src="{{ $imageStyled.RelPermalink }}"
+        alt="{{ .Title }}"
+        width="472"
+        height="258">
+</div>
+{{ end }}

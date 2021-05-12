@@ -1,0 +1,25 @@
+#gt-cols
+    @media (min-width: $screen-min-news-breakpoint-sm)
+        &.children-2,
+        &.children-3,
+        &.children-4,
+            display: grid 
+            grid-gap: $grid-gap
+            grid-template-columns: repeat(auto-fill, minmax(45%, 1fr))
+    @media (min-width: $screen-min-news-breakpoint-md)
+        &.children-3,
+        &.children-4
+            grid-template-columns: repeat(auto-fill, minmax(30%, 1fr)) 
+    @media (min-width: $screen-min-news-breakpoint-lg)
+        &.children-4
+            grid-template-columns: repeat(auto-fill, minmax(22%, 1fr)) 
+
+@supports (display: grid) 
+  #gt-cols 
+    @media (min-width: $screen-min-news-breakpoint-sm) 
+      &.children-4,
+      &.children-3,
+      &.children-2
+          > .item
+            margin: 0
+            width: auto

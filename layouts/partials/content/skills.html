@@ -1,0 +1,19 @@
+{{ with .Site.GetPage "section" "skills" }}
+    <article class="block">
+        <header>
+            <h2 class="subtitle is-6 is-uppercase has-text-weight-bold has-text-info">Compétences</h2>
+        </header>
+        <div class="skills">
+            {{ range .Pages }}
+                <div class="mb-2">
+                    <p class="subtitle is-size-6 mb-0 ellipsis">
+                        {{ .Title }}
+                    </p>
+                    <progress class="progress is-info" value="{{ .Params.level }}" max="100">{{ .Params.level }}%</progress>
+                    
+                </div>
+            {{ end }}
+        </div>
+    </article>
+    
+{{ end }}

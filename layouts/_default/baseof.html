@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode | default "fr" }}">
+  {{ partial "head/head.html" . }}
+  {{ if eq .Kind "home" -}}
+    {{ .Scratch.Set "class" "home" -}}
+  {{ else if eq .Kind "404" -}}
+    {{ .Scratch.Set "class" "error404" -}}
+  {{ else if eq .Kind "page" -}}
+    {{ .Scratch.Set "class" .Type -}}
+    {{ .Scratch.Add "class" " single" -}}
+  {{ else -}}
+    {{ .Scratch.Set "class" .Type -}}
+    {{ .Scratch.Add "class" " list" -}}
+  {{ end -}}
+  <body class="{{ .Scratch.Get "class" }}">
+    {{ if and .IsHome .Site.Home.Params.alert }}
+      {{ partial "header/alert.html" . }}
+    {{ end }}
+    <div class="container main-container-bgc">
+      <div id="main-header"> 
+        {{ partial "header/header.html" . }}
+        {{ partial "content/identity" . }}
+        <div class="gt-skills-cols">
+          <div class="skill">
+            {{ partial "content/skills" . }}
+          </div>
+          <div class="skill">
+            {{ partial "content/languages" . }}
+          </div>
+        </div>
+      </div>
+      <div id="main-content">
+        <main role="main">
+          {{ block "main" . }}{{ end }}
+        </main>
+        {{ partial "footer/footer.html" . }}
+      </div>
+    </div>
+    
+    {{ partial "footer/script-footer.html" . }}
+  </body>
+</html>

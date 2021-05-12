@@ -1,0 +1,12 @@
+
+{{ $portrait := .Site.Home.Params.image }}
+{{ $src := resources.Get $portrait  }}
+{{ $portraitStyled := $src.Fill "560x560 q55 smart"}}
+<div class="portrait">
+    <img 
+    loading="lazy"
+    src="{{ $portraitStyled.RelPermalink }}" 
+    alt="{{ .Title }}"
+    width="560"
+    height="560">
+</div>

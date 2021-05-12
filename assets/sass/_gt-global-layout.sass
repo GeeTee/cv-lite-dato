@@ -1,0 +1,86 @@
+body 
+    background-color: $arpl-color
+.main-container-bgc 
+    // background: red
+    display: flex 
+    flex-direction: column 
+#main-header
+    @extend .dark-bg
+    padding-bottom: 1rem
+    .title 
+        color: white
+
+// métier location tel sous le header
+.details
+    display: flex;
+    flex-direction: column
+    align-items: center
+    .jobs-education &
+        align-items: start
+    li 
+        > svg 
+            @extend .mr-2
+            @extend .has-text-info
+            & + span
+                display: inline-block 
+                &::first-letter 
+                    text-transform: uppercase 
+        &:not(:first-child)
+            @extend .mt-2      
+
+// les sections expérience pro et scolarité
+.jobs-education 
+    > article 
+        &:not(:last-child) 
+            border-bottom: 1px dashed $arpl-color
+
+#main-header 
+    margin-bottom: 2vw
+    position: relative
+    display: flex
+    flex-direction: column 
+    .portrait 
+        text-align: center
+        order: 1
+    h1 
+        order: 2
+    p 
+        order: 3
+main 
+    > * 
+        @extend .mb-4
+#main-content
+    @extend .dark-bg
+    
+    // flex-grow: 1
+    padding-top: 1rem
+    footer
+        // margin-top: auto
+
+
+
+footer 
+    &:not(.is-in-item)
+        @extend .dark-bg
+
++tablet
+    $mywidth: 30%
+    .main-container-bgc
+        // align-items: stretch
+        flex-direction: row
+        justify-content: space-between
+    #main-header
+        overflow: hidden
+        margin-bottom: 0
+        padding: 1rem
+        // position: fixed
+        // top: 0
+        // transform: translate3d(0,0,0)
+        width: $mywidth
+    #main-content
+        flex-grow: 0
+        display: flex;
+        flex-direction: column
+        width: 67%
+        footer 
+            margin-top: auto

@@ -1,0 +1,39 @@
+
+.preserve3d .gtcard 
+    background-color: white
+    padding-bottom: 65%
+    overflow: hidden
+    .face 
+        -webkit-backface-visibility: hidden
+        -moz-backface-visibility: hidden
+        -ms-backface-visibility: hidden
+        -o-backface-visibility: hidden
+        backface-visibility: hidden
+        height: 100%
+        left: 0
+        position: absolute
+        top: 0
+        transform-style: preserve-3d
+        transition: 1s ease-in-out
+        width: 100%
+        &:hover 
+            cursor: pointer
+        &.back 
+            display: flex
+            flex-direction: column
+            flex-shrink: 1
+            justify-content: space-between
+            padding: 0.5rem
+            transform: perspective(500px) rotateY(180deg)
+            a 
+                align-self: flex-end
+            > div 
+                overflow: hidden
+                margin-bottom: .5rem
+                overflow-y: auto
+
+.preserve3d .is-flipped 
+    .face.front 
+        transform: perspective(500px) rotateY(180deg)
+    .face.back 
+        transform: perspective(500px) rotateY(360deg)

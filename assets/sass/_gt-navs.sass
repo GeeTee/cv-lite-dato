@@ -1,0 +1,82 @@
+#main-header
+    .gt-manual-nav
+        display: flex
+        justify-content: space-around
+        +tablet 
+            flex-direction: column 
+            padding-top: 2.5rem 
+#main-header
+    .gt-manual-nav 
+        a 
+            border-bottom: .5rem solid transparent
+            padding: .1rem .5rem
+            &.is-active 
+                color: $active-color
+                border-bottom-color: $active-color
+            &:hover,
+            &:focus
+                color: $hover-color
+                border-bottom-color: $hover-color
+            +tablet 
+                border-bottom: none
+                border-left: .5rem solid transparent
+                &.is-active 
+                    border-left-color: $active-color 
+                &:hover,
+                &:focus 
+                    border-left-color: $hover-color
+        
+.is-sticky-nav
+    position: sticky
+    @extend .mb-4
+    top: 1rem
+    transform: translate3d(0,0,0) 
+    z-index: 3
+    .gt-commercial-nav 
+        a
+            display: inline-block
+            background-color: $black-mat
+            color: $link-color-in-black-mat
+            padding: .5rem .7rem
+            @extend .is-uppercase
+            &.is-active 
+                color: $active-color
+            &:first-child 
+                transform: skew(20deg)
+            &:nth-child(2)
+                @extend .in-trapeze
+            &:nth-child(3)
+                transform: skew(-20deg)
+
+.pagination-section
+    &.pagination-yes
+        @extend .is-size-7 
+        @extend .is-uppercase
+        &.previous
+            order: 1
+            margin-right: .5rem
+        &.next
+            order: 2
+            margin-left: .5rem
+    &.pagination-no 
+        visibility: hidden
+        height: 0
+        overflow: hidden
+        width: 0
+        &.previous
+            order: 1
+        &.next
+            order: 2
+
+// Menus en footer 
+footer 
+    .gt-commercial-nav > ul 
+        li:nth-child(2)
+            display: none
+    .footer-nav 
+        a 
+            display: block
+            @extend .menu-link-left-border
+            &::first-letter 
+                text-transform: uppercase
+    z-index: 1000

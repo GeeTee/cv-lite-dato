@@ -1,0 +1,18 @@
+{{ if .Params.image }}
+    {{ $imageA := .Params.image }}
+    {{ $image := resources.Get $imageA }}
+
+    {{ if .Params.alt  }}
+        {{ $alt := .Params.alt }}
+
+        {{ $lqip := $image.Resize $.Site.Params.lqipWidth -}}
+        <img class="img-simple border rounded p-1 img-fluid lazyload blur-up" src="{{ $lqip.Permalink }}" data-src="{{ $image.Permalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $alt }}">
+    {{ else }}
+        {{ $alt := .Site.Title }}
+
+        {{ $lqip := $image.Resize .Params.lqipWidth -}}
+        <img class="img-simple border rounded p-1 img-fluid lazyload blur-up" src="{{ $lqip.Permalink }}"
+            data-src="{{ $image.Permalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $alt }}">
+    {{ end }}
+
+{{ end }}

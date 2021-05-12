@@ -1,0 +1,18 @@
+[[main]]
+  name = "GitHub"
+  url = "https://github.com/h-enk/hyas"
+  weight = 10
+[[main]]
+  name = "blog"
+  url = "/blog/"
+  weight = 11
+
+[[social]]
+  name = "LinkedIn"
+  url = "https://www.linkedin.com/in/henkverlinde/"
+  weight = 20
+
+[[social]]
+  name = "Twitter"
+  url = "https://twitter.com/henkverlinde"
+  weight = 30

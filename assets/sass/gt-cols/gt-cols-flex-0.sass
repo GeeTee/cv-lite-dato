@@ -1,0 +1,27 @@
+
+.item 
+    background-color: salmon
+    margin-bottom: 1.5rem
+#gt-cols
+    &.children-1
+        > .item 
+            margin:  0 auto
+            width: 50ch
+    @media (min-width: $screen-min-news-breakpoint-sm)
+        &.children-2,
+        &.children-3,
+        &.children-4,
+            display: flex
+            flex-flow: row wrap
+            justify-content: space-between
+            > .item 
+                width: calc((100% / 2) - 1rem)
+    @media (min-width: $screen-min-news-breakpoint-md)
+        &.children-3,
+        &.children-4
+            > .item 
+                width: calc((100% / 3) - 1rem)
+    @media (min-width: $screen-min-news-breakpoint-lg)
+        &.children-4
+            > .item 
+                width: calc((100% / 4) - 1 rem)

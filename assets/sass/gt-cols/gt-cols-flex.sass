@@ -1,0 +1,26 @@
+
+.item 
+    margin-bottom: 1.5rem
+#gt-cols
+    &.children-1
+        > .item 
+            margin:  0 auto
+            width: 80%
+            max-width: 50ch
+    @media (min-width: $screen-min-news-breakpoint-sm)
+        &.children-2,
+        &.children-3,
+        &.children-4,
+            display: flex
+            flex-flow: row wrap
+            justify-content: space-between
+            > .item 
+                width: calc((100% / 2) - 1rem)
+    @media (min-width: $screen-min-news-breakpoint-md)
+        margin-left: -1rem
+        &.children-3,
+        &.children-4
+            justify-content: flex-start
+            > .item 
+                margin-left: 1rem
+                width: calc((100% / 3) - 1rem)

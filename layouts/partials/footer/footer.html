@@ -1,0 +1,32 @@
+<footer class="is-flex is-flex-direction-column is-align-items-center" role="contentinfo">
+  <div class="social-icon-list is-flex is-flex-direction-row">
+
+    {{ if .Site.Home.Params.schemaFacebook }}
+      <a href="{{ .Site.Home.Params.schemaFacebook}}"><i class="fab fa-facebook-f  has-text-primary"></i></a>
+    {{ end }}
+
+    {{ if .Site.Home.Params.schemaTwitter }}
+      <a href="{{ .Site.Home.Params.schemaTwitter }}"><i class="fab fa-twitter  has-text-primary"></i></a>
+    {{ end }}
+    {{ if .Site.Home.Params.schemaLinkedin }}
+    <a href="{{ .Site.Home.Params.schemaLinkedin }}"><i class="fab fa-linkedin-in  has-text-primary"></i></a>
+    {{ end }}
+
+    {{ if .Site.Home.Params.schemaInstagram }}
+    <a href="{{ .Site.Home.Params.schemaInstagram }}"><i class="fab fa-instagram  has-text-primary"></i></a>
+    {{ end }} 
+
+    {{ if .Site.Home.Params.schemaYouTube }}
+    <a href="{{ .Site.Home.Params.schemaYouTube }}"><i class="fab fa-youtube  has-text-primary"></i></a>
+    {{ end }}
+    
+    {{ if .Site.Home.Params.schemaGitHub }}
+    <a href="{{ .Site.Home.Params.schemaGitHub }}"><i class="fab fa-github  has-text-primary"></i></a>
+    {{ end }}
+    
+    </div>
+  <a href="https://bleublancweb.fr">Powered by BleuBlancWeb</a>
+  <span class="is-size-7 has-text-centered" style="max-width: 30rem">Toutes les informations du Curriculum Vitae sont
+    fictives et non que valeur d'exemple. Toute concordance avec une entité réelle serait fortuite.</span>
+    <span id="custom-login"><i class="fas fa-user-cog"></i></span>
+</footer>

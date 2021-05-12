@@ -1,0 +1,20 @@
+{{ if or (.Site.Home.Params.job) (.Site.Home.Params.location) (.Site.Home.Params.email) (.Site.Home.Params.tel) }}
+<div class="details mt-1 block">
+    <ul>
+        {{ if .Site.Home.Params.job }}
+        <li><i class="fas fa-briefcase has-text-info mr-1"></i>
+            <span>{{ .Site.Home.Params.job }}</span>
+        </li>
+        {{ end }}
+        {{ if .Site.Home.Params.location }}
+        <li><i class="fas fa-home has-text-info mr-1"></i> <span>{{ .Site.Home.Params.location }}</span></li>
+        {{ end }}
+        {{ if .Site.Home.Params.tel}}
+        <li><i class="fas fa-phone has-text-info mr-1"></i> <span>{{ .Site.Home.Params.tel }}</span></li>
+        {{ end }}
+        {{ if .Site.Home.Params.email}}
+        <li><i class="fas fa-at has-text-info mr-1"></i> <span>{{ .Site.Home.Params.email }}</span></li>
+        {{ end }}
+    </ul>
+</div>
+{{ end }}

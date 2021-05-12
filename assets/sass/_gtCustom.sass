@@ -1,0 +1,80 @@
+@import "./fontawesome/scss/fontawesome.scss"
+@import "./fontawesome/scss/solid.scss"
+@import "./fontawesome/scss/brands.scss"
+
+
+$black-mat: #313131
+$active-color: salmon
+$hover-color: dodgerblue
+$link-color-in-black-mat: lighten($black-mat, 75%)
+$arpl-color: lighten($black-mat, 40%)
+$colorp: lighten($black-mat, 80%)
+
+// @import "gt-cols/gt-cols-var"
+// @import "gt-cols/gt-cols-flex"
+// @import "gt-cols/gt-cols-cssGrid"
+@import "gt-cols/gt-skills-cols"
+@import "gt-utilities"
+@import "gt-global-layout"
+@import "gt-navs"
+// @import "gt-home-page"
+// @import "gt-flip-card"
+// @import "gt-loader"
+
+html, body, .container 
+    min-height: 100vh
+
+p 
+    @extend .py-2
+.show-product
+    header
+        order: 2
+
+.show-article-product
+    > p 
+        order: 2
+
+.gt-vignette
+    width: 64px
+    order: 1
+
++tablet 
+    .gt-half-centered
+        margin: 0 auto
+        width: 80%
+        max-width: 800px
+        
+    .big-article .banner +  .gt-half-centered
+        max-width: 800px
+        position: relative
+        top: -2rem
+
+
+    
+.gt-item-content-in-list
+    display: flex
+    flex-direction: column
+.gt-content
+    p:not(:last-child)
+        @extend .block
+.is-text-overflow 
+    flex: 1
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+
+.post-list-img
+    > a 
+        display: block
+
+// admin button 
+#custom-login:hover
+    cursor: pointer  
+
+
+// sitemap 
+.sitemapUl 
+    > li 
+        text-transform: uppercase
+        &:not(:first-child) 
+            margin-top: 1rem

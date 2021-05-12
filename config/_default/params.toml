@@ -1,0 +1,26 @@
+title = "Curriculum Vitae Lite"
+titleSeparator = "-"
+titleAddition = "CV Lite par BleuBlancWeb.fr"
+description = "Un curriculum vitae proposé par BleuBlancWeb.fr"
+
+images = ["bleuBlancWeb.png"]
+
+siteLinksSearchBox = false
+
+themeColor = "#fff"
+
+quality = 85
+bgColor = "#fff"
+landscapePhotoWidths = [1000, 800, 700, 600, 500]
+portraitPhotoWidths = [800, 700, 600, 500]
+lqipWidth = "20x"
+
+
+ogLocale = "fr-FR"
+schemaType = "Person"
+
+# Footer
+footer = "Powered by <a href=\"https://www.netlify.com/\">Netlify</a>, <a href=\"https://gohugo.io/\">Hugo</a>, and <a href=\"https://gethyas.com/\">Hyas</a>"
+
+alert = false
+alertText = "Deliver web projects 10x faster. <a class=\"alert-link\" href=\"https://www.netlify.com/whitepaper/\" target=\"_blank\" rel=\"noopener\">Get the free enterprise paper →</a>"
