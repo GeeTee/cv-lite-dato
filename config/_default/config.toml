@@ -1,4 +1,4 @@
-baseurl = "https://cv-lite-dato.netlify.app/"
+baseurl = "https://cv-lite-dato-bleublancweb.netlify.app/"
 disableAliases = true
 disableHugoGeneratorInject = true
 disableKinds = ["taxonomy", "taxonomyTerm"]
