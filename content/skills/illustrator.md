@@ -1,7 +1,7 @@
 ---
 title: Illustrator
 draft: false
-level: 50
+level: 95
 weight: 2
 ---
 
