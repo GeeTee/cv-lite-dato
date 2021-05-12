@@ -43,9 +43,9 @@ module.exports = (dato, root, i18n) => {
           title: skill.titre,
           draft: false,
           level: skill.niveau,
-          weight: index
+          weight: index,
         },
-        content: ''
+        content: '',
       });
     });
   }); 
