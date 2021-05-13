@@ -29,9 +29,27 @@ module.exports = (dato, root, i18n) => {
 //     content: ''
 //   });
 
- 
+// COLLECTION CARRIERES
+  root.directory('content/carrieres', dir => {
+    // ...and for each of the works stored online...
+    dato.carrieres.forEach((carriere, index) => {
+      // ...create a markdown file with all the metadata in the frontmatter
+      dir.createPost(`${carriere.slug}.md`, 'yaml', {
+        frontmatter: {
+          title: carriere.titre,
+          draft: false,
+          date_from: carriere.dateDebut,
+          date_to: carriere.dateFin,
+          company: carriere.company,
+          location: carriere.location,
+          weight: index,
+        },
+        content: '',
+      });
+    });
+  }); 
 
-// collection skills
+// COLLECTION LANGUAGES
   root.directory('content/languages', dir => {
     // ...and for each of the works stored online...
     dato.languages.forEach((language, index) => {
@@ -48,7 +66,7 @@ module.exports = (dato, root, i18n) => {
     });
   }); 
 
-// collection skills
+// cOLLECTION SKILLS
   root.directory('content/skills', dir => {
     // ...and for each of the works stored online...
     dato.skills.forEach((skill, index) => {
