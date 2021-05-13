@@ -44,7 +44,7 @@ module.exports = (dato, root, i18n) => {
           location: carriere.location,
           weight: index,
         },
-        content: '',
+        content: carriere.description,
       });
     });
   }); 
