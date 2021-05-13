@@ -20,14 +20,21 @@ module.exports = (dato, root, i18n) => {
 
 
 
-//   root.createPost('content/_index.md', 'yaml', {
-//     frontmatter: {
-//       name: dato.customisation.name,
-//       un_nombre: dato.customisation.unNombre,
-//       bgcColor: dato.customisation.backgroundCouleur.hex,
-//     },
-//     content: ''
-//   });
+  root.createPost('content/_index.md', 'yaml', {
+    frontmatter: {
+      title: dato.reglageDuSite.title,
+      titleAddition: dato.reglageDuSite.titleAddition,
+      description: dato.reglageDuSite.description,
+      image: dato.reglageDuSite.photo.url({w: 560, h: 560, fm: 'jpg', auto: 'compress'}),
+      job: dato.reglageDuSite.job,
+      location: dato.reglageDuSite.location,
+      email: dato.reglageDuSite.email,
+      tel: dato.reglageDuSite.tel,
+      alertText: dato.reglageDuSite.alertText,
+      alert: dato.reglageDuSite.alert,
+    },
+    content: '',
+  });
 
 // COLLECTION CARRIERES
   root.directory('content/scolarite', dir => {
