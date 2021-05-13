@@ -30,7 +30,7 @@
     "start:datocms": "dato dump --watch",
     "build:datocms": "dato dump",
     "build:hugo": "NODE_ENV=production hugo --gc --minify --config config.prod.toml",
-    "build": "npm run build:datocms && npm run build:hugo && npm run build:assets",
+    "build": "npm run build:datocms && npm run build:hugo",
     "start:livereload": "livereload public -e 'html' -p 5678",
     "start": "mkdir -p content && dato check && npm run startBefore && npm run start:datocms"
   },
