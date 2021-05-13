@@ -32,15 +32,16 @@ module.exports = (dato, root, i18n) => {
 // COLLECTION CARRIERES
   root.directory('content/scolarite', dir => {
     // ...and for each of the works stored online...
-    dato.scolarité.forEach((school, index) => {
+    dato.schools.forEach((school, index) => {
       // ...create a markdown file with all the metadata in the frontmatter
       dir.createPost(`${school.slug}.md`, 'yaml', {
         frontmatter: {
           title: school.titre,
           draft: false,
-          date_from: school.dateFropm,
+          date_from: school.dateFrom,
           date_to: school.dateTo,
           level: school.level,
+          location: school.location,
           weight: index,
         },
         content: '',
