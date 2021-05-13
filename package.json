@@ -12,9 +12,9 @@
     "init": "rimraf .git && git init -b main",
     "create": "hugo new",
     "prestart": "npm run clean",
-    "start": "hugo server --disableFastRender",
+    "startBefore": "hugo server --disableFastRender",
     "prebuild": "npm run clean",
-    "build": "hugo --gc --minify",
+    "buildBefore": "hugo --gc --minify",
     "build:functions": "netlify-lambda build assets/lambda",
     "build:preview": "npm run build -D -F",
     "clean": "rimraf public resources functions",
@@ -25,7 +25,14 @@
     "release": "standard-version",
     "server": "hugo server",
     "test": "npm run -s lint",
-    "env": "env"
+    "env": "env",
+    "start:hugo": "server --disableFastRender --config config.dev.toml",
+    "start:datocms": "dato dump --watch",
+    "build:datocms": "dato dump",
+    "build:hugo": "NODE_ENV=production hugo --gc --minify --config config.prod.toml",
+    "build": "npm run build:datocms && npm run build:hugo && npm run build:assets",
+    "start:livereload": "livereload public -e 'html' -p 5678",
+    "start": "mkdir -p content && dato check && npm run startBefore && npm run start:datocms"
   },
   "devDependencies": {
     "@babel/cli": "^7.12",
