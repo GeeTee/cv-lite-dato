@@ -1,7 +1,7 @@
 ---
-title: Photoshop
+title: Allemand
 draft: false
-level: 10
+level: 50
 weight: 1
 ---
 

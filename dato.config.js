@@ -31,9 +31,24 @@ module.exports = (dato, root, i18n) => {
 
  
 
-  // Create a `work` directory (or empty it if already exists)...
+// collection skills
+  root.directory('content/languages', dir => {
+    // ...and for each of the works stored online...
+    dato.languages.forEach((language, index) => {
+      // ...create a markdown file with all the metadata in the frontmatter
+      dir.createPost(`${language.slug}.md`, 'yaml', {
+        frontmatter: {
+          title: language.titre,
+          draft: false,
+          level: language.niveau,
+          weight: index,
+        },
+        content: '',
+      });
+    });
+  }); 
 
-
+// collection skills
   root.directory('content/skills', dir => {
     // ...and for each of the works stored online...
     dato.skills.forEach((skill, index) => {
