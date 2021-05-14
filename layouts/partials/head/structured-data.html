@@ -7,11 +7,20 @@
       "url": "{{ "/" | absURL }}",
       "name": "{{ .Site.Home.Params.title }}",
       "logo": "{{ "/" | absURL }}{{ .Site.Home.Params.schemaLogo }}",
-      "sameAs": [
-        "{{ .Site.Home.Params.schemaTwitter | safeURL }}",
-        "{{ .Site.Home.Params.schemaLinkedIn | safeURL }}",
-        "{{ .Site.Home.Params.schemaGitHub | safeURL }}"
-      ]
+      {{ if or (.Site.Home.Params.schemaTwitter) (.Site.Home.Params.schemaLinkedIn) (.Site.Home.Params.schemaGitHub) }}
+        "sameAs": [
+          {{ if  .Site.Home.Params.schemaTwitter}}
+            "{{ .Site.Home.Params.schemaTwitter | safeURL }}",
+          {{ end }}
+          {{ if .Site.Home.Params.schemaLinkedIn }}
+            "{{ .Site.Home.Params.schemaLinkedIn | safeURL }}",
+          {{ end }}
+          {{ if .Site.Home.Params.schemaGitHub }}
+            "{{ .Site.Home.Params.schemaGitHub | safeURL }}"
+          {{ end }}
+        
+      ]      
+      {{ end }}
     }
     </script>
   {{ end -}}
@@ -22,11 +31,20 @@
       "@type": "Person",
       "url": "{{ "/" | absURL }}",
       "name": "{{ .Site.Home.Params.title }}",
-      "sameAs": [
-        "{{ .Site.Home.Params.schemaTwitter | safeURL }}",
-        "{{ .Site.Home.Params.schemaLinkedIn | safeURL }}",
-        "{{ .Site.Home.Params.schemaGitHub | safeURL }}"
-      ]
+      {{ if or (.Site.Home.Params.schemaTwitter) (.Site.Home.Params.schemaLinkedIn) (.Site.Home.Params.schemaGitHub) }}
+        "sameAs": [
+          {{ if  .Site.Home.Params.schemaTwitter}}
+            "{{ .Site.Home.Params.schemaTwitter | safeURL }}",
+          {{ end }}
+          {{ if .Site.Home.Params.schemaLinkedIn }}
+            "{{ .Site.Home.Params.schemaLinkedIn | safeURL }}",
+          {{ end }}
+          {{ if .Site.Home.Params.schemaGitHub }}
+            "{{ .Site.Home.Params.schemaGitHub | safeURL }}"
+          {{ end }}
+        
+      ]      
+      {{ end }}
     }
     </script>
   {{ end -}}
